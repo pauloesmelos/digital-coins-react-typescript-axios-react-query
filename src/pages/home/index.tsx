@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <main className="w-full pt-5">
-      <div className="w-full max-w-[1300px] px-4">
+      <div className="w-full max-w-[1300px] px-4 mx-auto">
         <div>
           <form onSubmit={handleForm} className="w-full flex items-center gap-5">
             <input 

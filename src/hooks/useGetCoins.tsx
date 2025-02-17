@@ -2,25 +2,29 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 interface Coin {
-    id: string,
-    rank: string,
-    symbol: string,
-    name: string,
-    supply: string,
-    maxSupply: string,
-    marketCapUsd: string,
-    volumeUsd24Hr: string,
-    priceUsd: string,
-    changePercent24Hr: string,
-    vwap24Hr: string,
-    explorer: string
+  id: string,
+  rank: string,
+  symbol: string,
+  name: string,
+  supply: string,
+  maxSupply: string,
+  marketCapUsd: string,
+  volumeUsd24Hr: string,
+  priceUsd: string,
+  changePercent24Hr: string,
+  vwap24Hr: string,
+  explorer: string
+}
+interface DataCoin {
+  data: Array<Coin>,
+  timestamp: number
 }
 
 const API = "https://api.coincap.io/v2/assets"; //?limit=5&offset=0"
 
-const getCoins = async (limit: string, offset: string) => {
+const getCoins = async (limit: string, offset: string): Promise<DataCoin> => {
     console.log(limit, offset);
-    return await axios.get(`${API}?limit=${10}&offset=${0}`)
+    return await axios.get(`${API}?limit=${limit}&offset=${offset}`)
     .then(coins => coins.data)
     .catch(erro => console.log(erro));
 }

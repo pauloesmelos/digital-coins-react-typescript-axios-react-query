@@ -7,7 +7,7 @@ const Header = () => {
         <div className="w-full flex justify-center">
             <Link to="/">
                 <h1 className="font-bold text-4xl text-white hover:scale-[1.06] duration-300 ease-linear relative
-                after:w-3 after:h-3 after:absolute after:top-5 after:left-[0px] after:bg-blue-500 after:z-[-1]">
+                after:w-3 after:h-3 after:absolute after:top-[26px] after:left-[0px] after:bg-blue-500 after:z-[-1]">
                     Dev
                     <span className="text-blue-500 px-2">
                         Currency
