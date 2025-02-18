@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const URL = "https://api.coincap.io/v2/assets";
 
@@ -29,13 +29,13 @@ const getCoin = async (id: string | undefined): Promise<DataCoin> => {
 }
 
 const useGetCoin = (id: string | undefined) => {
-  const { data } = useQuery<DataCoin>({
+  const { data, isLoading } = useQuery<DataCoin>({
     queryKey: [`use-get-${id}`],
     queryFn: () => getCoin(id),
     enabled: !!id,
     refetchOnWindowFocus: false
   });
-  return { data };
+  return { data, isLoading };
 }
 
 export default useGetCoin;
